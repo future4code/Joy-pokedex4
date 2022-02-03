@@ -26,7 +26,7 @@ export const BTNVoltar = styled.button`
   }
 `;
 
-export const NomePokemon = styled.h2``;
+export const NomePokemon = styled.h1``;
 
 export const BTNAdiciona = styled.button`
   color: white;
@@ -62,35 +62,41 @@ export const CardDetalhes = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 80vh;
   padding: 10px;
 `;
 
 export const Col1 = styled.div`
   display: flex;
-  width: 20%;
+  width: 13%;
   height: 100%;
   flex-direction: column;
 `;
 
-export const ImgPokemon = styled.div`
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
+export const DivPokemon = styled.div`
+  width: 150px;
+  height: 150px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export const Col2 = styled.div`
+export const ImgPokemon = styled.img`
+  width: 100%;
   height: 100%;
+`
+
+export const Col2 = styled.div`
+  height: 60%;
   width: 40%;
   display: flex;
-  border: 1px solid black;
   flex-direction: column;
   padding: 10px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 5px 10px 18px #888888;
 `;
 
 export const InfoPokemon = styled.div`
@@ -108,9 +114,30 @@ export const Col3 = styled.div`
 export const TypeDiv = styled.div`
   display: flex;
   justify-content: space-evenly;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 5px 10px 18px #888888;
 `;
 
 export const MoveDiv = styled.div`
+  width: 100%;
+  flex-direction: column;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 5px 10px 18px #888888;
 `;
+
+export const AtaqueDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+
+`
+
+export const H5 = styled.p`
+  margin-top: 10px;
+`
