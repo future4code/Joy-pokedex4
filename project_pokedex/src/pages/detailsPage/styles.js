@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Header = styled.div`
-  width: 100%;
+  width: 87%;
   height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px auto;
 `;
 
 export const BTNVoltar = styled.button`
@@ -63,7 +63,6 @@ export const CardDetalhes = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 80vh;
   padding: 10px;
 `;
 
@@ -89,7 +88,6 @@ export const ImgPokemon = styled.img`
 `
 
 export const Col2 = styled.div`
-  height: 60%;
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -113,6 +111,7 @@ export const Col3 = styled.div`
 
 export const TypeDiv = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   padding: 10px;
   margin-bottom: 20px;
