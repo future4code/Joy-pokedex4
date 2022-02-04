@@ -8,4 +8,8 @@ export default createGlobalStyle`
     box-sizing: border-box
   }
 
+  h1, p, button{
+    font-family: roboto;
+    color: rgba(61, 62, 62, 1);
+  }
 `

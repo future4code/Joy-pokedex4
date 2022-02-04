@@ -9,7 +9,6 @@ import {
   InfoPokemon,
   NomePokemon,
 } from "./styles";
-import "../../styles/global.css";
 
 export default function DetailsPage() {
   return (
