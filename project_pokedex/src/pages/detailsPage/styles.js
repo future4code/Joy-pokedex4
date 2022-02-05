@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const Header = styled.div`
-  width: 100%;
+  width: 87%;
   height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin-bottom: 30px;
-`;
+  margin: 0 auto 30px auto;
+`
 
 export const BTNVoltar = styled.button`
   border-radius: 10px;
@@ -24,9 +24,9 @@ export const BTNVoltar = styled.button`
     color: black;
     background: #89e2f0;
   }
-`;
+`
 
-export const NomePokemon = styled.h2``;
+export const NomePokemon = styled.h1``;
 
 export const BTNAdiciona = styled.button`
   color: white;
@@ -41,7 +41,7 @@ export const BTNAdiciona = styled.button`
     color: black;
     background: #94e5a6;
   }
-`;
+`
 
 export const BTNRemove = styled.button`
   border-radius: 10px;
@@ -56,41 +56,47 @@ export const BTNRemove = styled.button`
     color: black;
     background: #f5c6ca;
   }
-`;
+`
 
 export const CardDetalhes = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  height: 80vh;
+  justify-content: space-evenly;
   padding: 10px;
-`;
+`
 
 export const Col1 = styled.div`
   display: flex;
-  width: 20%;
+  width: 13%;
   height: 100%;
   flex-direction: column;
-`;
+`
 
-export const ImgPokemon = styled.div`
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
+export const DivPokemon = styled.div`
+  width: 150px;
+  height: 150px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+  background: #e3f8fc;
+  border-radius:5px;
+`
+
+export const ImgPokemon = styled.img`
+  width: 100%;
+  height: 100%;
+`
 
 export const Col2 = styled.div`
-  height: 100%;
   width: 40%;
   display: flex;
-  border: 1px solid black;
   flex-direction: column;
   padding: 10px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 5px 10px 18px #888888;
 `;
 
 export const InfoPokemon = styled.div`
@@ -99,18 +105,78 @@ export const InfoPokemon = styled.div`
   margin-top: 10px;
 `;
 
+export const ColAtributos = styled.div`
+  width: 20%;
+`
+
+export const ColValores = styled.div`
+  width: 80%;
+  background: #ccc;
+  border-radius: 5px;
+`
+
+export const ColValoresStatus = styled.div`
+  background: #17A2B8;
+  border-radius: 5px;
+  color: #ffffff;
+  padding-right:5px;
+  text-align: end;
+  max-width: 100%;
+  transition: 0.4s linear; 
+  animation: animacao 1s;
+  @keyframes animacao{
+    from { width: 0 }
+     to   { max-width: 100% }
+  }
+`
+
 export const Col3 = styled.div`
   display: flex;
   width: 20%;
   flex-direction: column;
-`;
+`
 
 export const TypeDiv = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-`;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 5px 10px 18px #888888;
+`
 
 export const MoveDiv = styled.div`
+  width: 100%;
+  flex-direction: column;
   display: flex;
   justify-content: space-between;
-`;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 5px 10px 18px #888888;
+`
+
+export const AtaqueDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const H5 = styled.p`
+  margin-top: 10px;
+  color: #17A2B8;
+`
+
+export const Spinner = styled.div`
+  width: 94%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`; 
+
+export const ContainerBody = styled.div`
+    background-image: radial-gradient(#77A1D3, #79CBCA, #E684AE );
+    height: 100vh;
+`
