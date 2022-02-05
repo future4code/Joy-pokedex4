@@ -1,8 +1,8 @@
 import HomePage from "../pages/homePage/HomePage";
 import DetailsPage from "../pages/detailsPage/DetailsPage";
 import PokedexPage from "../pages/pokedexPage/PokedexPage";
-
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import GlobalStyle from "../styles/global";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 export default function Routes(){
     return(
@@ -18,6 +18,7 @@ export default function Routes(){
                     <DetailsPage/>
                 </Route>
             </Switch>
+            <GlobalStyle/>
         </BrowserRouter>
     )
 }
