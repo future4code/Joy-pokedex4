@@ -14,105 +14,194 @@ import {
   ImgPokemon,
   AtaqueDiv,
   H5,
+  Spinner,
+  ColAtributos,
+  ColValores,
+  ColValoresStatus,
 } from "./styles";
 import "../../styles/global.css";
 import { useEffect, useState } from "react";
+import { detalhaPokemon } from "../../services/requests";
+import { BeatLoader } from "react-spinners";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function DetailsPage() {
-  const IdPokemon = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
   const [pokemon, setPokemon] = useState([]);
-  const [ataques, setAtaques] = useState([])
+  const [loading, setLoading] = useState(true);
   const history = useHistory();
 
-  const goBack = () => {
-    history.goBack();
+  const detalharPokemon = async () => {
+    const response = await detalhaPokemon();
+    response && setPokemon(response);
+    setLoading(false);
   };
 
   useEffect(() => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${IdPokemon}/`)
-      .then((res) => setPokemon(res.data))
-      .catch();
+    detalharPokemon();
   }, []);
+
+  const acionaToastify = () => {
+    toast.success("Pokemon adicionado com sucesso", {
+      theme: "colored",
+      className: "toastifySize",
+    });
+  };
 
   return (
     <>
       <Header>
-        <BTNVoltar onClick={goBack}>Voltar</BTNVoltar>
+        <BTNVoltar onClick={() => history.push("/")}>Voltar</BTNVoltar>
         <NomePokemon>{pokemon.name}</NomePokemon>
-        <BTNAdiciona>Adicionar</BTNAdiciona>
+        <BTNAdiciona onClick={acionaToastify}>Adicionar</BTNAdiciona>
       </Header>
       <CardDetalhes>
-        <Col1>
-          <DivPokemon>
-            <ImgPokemon src={pokemon?.sprites?.front_default}></ImgPokemon>
-          </DivPokemon>
-          <DivPokemon>
-            <ImgPokemon src={pokemon?.sprites?.back_default}></ImgPokemon>
-          </DivPokemon>
-        </Col1>
-        <Col2>
-          <div>
-            <h3 style={{ textAlign: "center" }}>Stats</h3>
-          </div>
-          <div>
-            <InfoPokemon>
-              <h5 className="statePokemon">hp:</h5>
-              <p>{pokemon?.stats?.[0].base_stat}</p>
-            </InfoPokemon>
-            <InfoPokemon>
-              <h5 className="statePokemon">attack:</h5>
-              <p>{pokemon?.stats?.[1].base_stat}</p>
-            </InfoPokemon>
-            <InfoPokemon>
-              <h5 className="statePokemon">defense:</h5>
-              <p>{pokemon?.stats?.[2].base_stat}</p>
-            </InfoPokemon>
-            <InfoPokemon>
-              <h5 className="statePokemon">special-attack:</h5>
-              <p>{pokemon?.stats?.[3].base_stat}</p>
-            </InfoPokemon>
-            <InfoPokemon>
-              <h5 className="statePokemon">special-defense:</h5>
-              <p>{pokemon?.stats?.[4].base_stat}</p>
-            </InfoPokemon>
-            <InfoPokemon>
-              <h5 className="statePokemon">speed:</h5>
-              <p>{pokemon?.stats?.[5].base_stat}</p>
-            </InfoPokemon>
-          </div>
-        </Col2>
-        <Col3>
-          <TypeDiv>
-            <div>
-              <h3 style={{ textAlign: "center" }}>Tipo</h3>
-            </div>
-            <div style={{display:"flex", justifyContent:"space-evenly", marginTop:"10px"}}>
-              <h5>{pokemon?.abilities?.[0].ability.name}</h5>
-              <h5>{pokemon?.abilities?.[1].ability.name}</h5>
-            </div>
-          </TypeDiv>
-          <MoveDiv>
-            <div>
-              <h3 style={{ textAlign: "center" }}>Principais Ataques</h3>
-            </div>
-            <div>
-              <InfoPokemon>
-                <AtaqueDiv>
-                  <H5>{pokemon?.moves?.[0].move.name}</H5>
-                  <H5>{pokemon?.moves?.[1].move.name}</H5>
-                  <H5>{pokemon?.moves?.[2].move.name}</H5>
-                  <H5>{pokemon?.moves?.[3].move.name}</H5>
-                  <H5>{pokemon?.moves?.[4].move.name}</H5>
-                  <H5>{pokemon?.moves?.[5].move.name}</H5>
-                </AtaqueDiv>
-              </InfoPokemon>
-            </div>
-          </MoveDiv>
-        </Col3>
+        {loading ? (
+          <Spinner>
+            <BeatLoader color="#00a5da" />
+          </Spinner>
+        ) : (
+          <>
+            <Col1>
+              <DivPokemon>
+                <ImgPokemon src={pokemon?.sprites?.front_default}></ImgPokemon>
+              </DivPokemon>
+              <DivPokemon>
+                <ImgPokemon src={pokemon?.sprites?.back_default}></ImgPokemon>
+              </DivPokemon>
+            </Col1>
+            <Col2>
+              <div>
+                <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
+                  Stats
+                </h3>
+              </div>
+              <div>
+                <InfoPokemon>
+                  <ColAtributos>
+                    <h5>hp:</h5>
+                  </ColAtributos>
+                  <ColValores>
+                    <ColValoresStatus
+                      style={{
+                        width: `${pokemon?.stats?.[0].base_stat}%`,
+                      }}
+                    >
+                      {pokemon?.stats?.[0].base_stat}
+                    </ColValoresStatus>
+                  </ColValores>
+                </InfoPokemon>
+                <InfoPokemon>
+                  <ColAtributos>
+                    <h5>attack:</h5>
+                  </ColAtributos>
+                  <ColValores>
+                    <ColValoresStatus
+                      style={{
+                        width: `${pokemon?.stats?.[1].base_stat}%`,
+                      }}
+                    >
+                      {pokemon?.stats?.[1].base_stat}
+                    </ColValoresStatus>
+                  </ColValores>
+                </InfoPokemon>
+                <InfoPokemon>
+                  <ColAtributos>
+                    <h5>defense:</h5>
+                  </ColAtributos>
+                  <ColValores>
+                    <ColValoresStatus
+                      style={{
+                        width: `${pokemon?.stats?.[2].base_stat}%`,
+                      }}
+                    >
+                      {pokemon?.stats?.[2].base_stat}
+                    </ColValoresStatus>
+                  </ColValores>
+                </InfoPokemon>
+                <InfoPokemon>
+                  <ColAtributos>
+                    <h5>special-attack:</h5>
+                  </ColAtributos>
+                  <ColValores>
+                    <ColValoresStatus
+                      style={{
+                        width: `${pokemon?.stats?.[3].base_stat}%`,
+                      }}
+                    >
+                      {pokemon?.stats?.[3].base_stat}
+                    </ColValoresStatus>
+                  </ColValores>
+                </InfoPokemon>
+                <InfoPokemon>
+                  <ColAtributos>
+                    <h5>special-defense:</h5>
+                  </ColAtributos>
+                  <ColValores>
+                    <ColValoresStatus
+                      style={{
+                        width: `${pokemon?.stats?.[4].base_stat}%`,
+                      }}
+                    >
+                      {pokemon?.stats?.[4].base_stat}
+                    </ColValoresStatus>
+                  </ColValores>
+                </InfoPokemon>
+                <InfoPokemon>
+                  <ColAtributos>
+                    <h5>speed:</h5>
+                  </ColAtributos>
+                  <ColValores>
+                    <ColValoresStatus
+                      style={{
+                        width: `${pokemon?.stats?.[5].base_stat}%`,
+                      }}
+                    >
+                      {pokemon?.stats?.[5].base_stat}
+                    </ColValoresStatus>
+                  </ColValores>
+                </InfoPokemon>
+              </div>
+            </Col2>
+            <Col3>
+              <TypeDiv>
+                <div>
+                  <h3 style={{ textAlign: "center" }}>Tipo</h3>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    marginTop: "10px",
+                  }}
+                >
+                  {pokemon?.types?.map((tipo, index) => {
+                    return <H5 key={index}>{tipo.type.name}</H5>;
+                  })}
+                </div>
+              </TypeDiv>
+              <MoveDiv>
+                <div>
+                  <h3 style={{ textAlign: "center" }}>Principais Ataques</h3>
+                </div>
+                <div>
+                  <InfoPokemon>
+                    <AtaqueDiv>
+                      {pokemon?.moves
+                        ?.map((ataque, index) => (
+                          <H5 key={index}>{ataque.move.name}</H5>
+                        ))
+                        .filter((ataque, index) => index < 5)}
+                    </AtaqueDiv>
+                  </InfoPokemon>
+                </div>
+              </MoveDiv>
+            </Col3>
+          </>
+        )}
       </CardDetalhes>
+      <ToastContainer autoClose={2000} />
     </>
   );
 }

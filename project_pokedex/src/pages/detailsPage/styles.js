@@ -80,6 +80,8 @@ export const DivPokemon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #e3f8fc;
+  border-radius:5px
 `;
 
 export const ImgPokemon = styled.img`
@@ -102,6 +104,31 @@ export const InfoPokemon = styled.div`
   justify-content: space-between;
   margin-top: 10px;
 `;
+
+export const ColAtributos = styled.div`
+  width: 20%;
+`
+
+export const ColValores = styled.div`
+  width: 80%;
+  background: #ccc;
+  border-radius: 5px;
+`
+
+export const ColValoresStatus = styled.div`
+  background: #17A2B8;
+  border-radius: 5px;
+  color: #ffffff;
+  padding-right:5px;
+  text-align: end;
+  max-width: 100%;
+  transition: 0.4s linear; 
+  animation: animacao 1s;
+  @keyframes animacao{
+    from { width: 0 }
+     to   { max-width: 100% }
+  }
+`
 
 export const Col3 = styled.div`
   display: flex;
@@ -139,4 +166,13 @@ export const AtaqueDiv = styled.div`
 
 export const H5 = styled.p`
   margin-top: 10px;
+  color: #17A2B8;
 `
+
+export const Spinner = styled.div`
+  width: 94%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
