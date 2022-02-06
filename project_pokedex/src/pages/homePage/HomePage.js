@@ -17,10 +17,25 @@ export default function HomePage(){
             .catch(err => console.log(err.response.data))
         )
     }
-    console.log(pokemons)
+
     useEffect(()=>{
-        Promise.all(promises).then(() => setPokemons(listPokemons));
+        Promise.all(promises).then(() => setPokemons(listPokemons.map(pokemon => 
+            ({...pokemon, added: false }))
+        ));        
     },[])
+
+    const addOrRemovePokemon = (id) =>{
+        const list = [...pokemons]
+
+        const newList = list.map(pokemon =>{
+            if(pokemon.id === id){
+                return ({...pokemon, added: !pokemon.added })
+            }
+            return(pokemon)            
+        })
+        setPokemons(newList)
+    }   
+    console.log(pokemons)
     
     return(
         <Container>
@@ -33,6 +48,8 @@ export default function HomePage(){
                                 alt={pokemon.name}
                                 img={pokemon.sprites.front_default}
                                 name={pokemon.name}
+                                handler={pokemon.added}
+                                add={() => addOrRemovePokemon(pokemon.id)}
                             />
                         )
                     }
