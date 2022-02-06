@@ -14,7 +14,7 @@ export default function Routes(){
                 <Route exact path={"/pokedex"}>
                     <PokedexPage/>
                 </Route>
-                <Route exact path={"/details"}>
+                <Route exact path={"/details/:id"}>
                     <DetailsPage/>
                 </Route>
             </Switch>
