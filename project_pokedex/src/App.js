@@ -8,9 +8,9 @@ export default function App(){
 
   let listPokemons = []
   let promises = []
-  for(let i = 1; i<= 20; i++){
+  for(let id = 1; id<= 20; id++){
       promises.push(
-          services.request.get(`${i}`)
+          services.request.get(`${id}`)
           .then(({data}) => listPokemons.push(data))
           .catch(err => console.log(err.response.data))
       )
