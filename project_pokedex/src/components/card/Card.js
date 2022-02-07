@@ -1,4 +1,4 @@
-import {Container, ContainerInfoCard, ContainerButtons} from "./styles";
+import {Container, ContainerInfoCard, ContainerButtons, BtnMain} from "./styles";
 
 export default function Card(props){
     return(
@@ -8,8 +8,8 @@ export default function Card(props){
                 <p>{props.name.toUpperCase()}</p>
             </ContainerInfoCard>
             <ContainerButtons>
-                <button>Adicionar</button>
-                <button>Detalhes</button>
+                <BtnMain>Adicionar</BtnMain>
+                <BtnMain>Detalhes</BtnMain>
             </ContainerButtons>
             
         </Container>
