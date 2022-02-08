@@ -1,4 +1,4 @@
-import {Container, ContainerInfoCard, ContainerButtons} from "./styles";
+import {Container, ContainerInfoCard, ContainerButtons, BtnMain} from "./styles";
 
 export default function Card(props){
     return(
@@ -12,6 +12,7 @@ export default function Card(props){
                     {props.handler ? "Remover" : "Adicionar"}
                 </button>               
                 <button onClick={props.details}>Detalhes</button>
+
             </ContainerButtons>
             
         </Container>
