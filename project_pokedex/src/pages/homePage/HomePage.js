@@ -1,23 +1,29 @@
 import {useContext} from "react";
-import { Context } from "../../context";
+import {useHistory} from "react-router-dom";
+import { Context } from "../../global/context";
 import {Container, ContainerCards} from "./styles";
 import Header from "../../components/header/Header";
 import Card from "../../components/card/Card";
-import {useHistory} from "react-router-dom";
-
 
 export default function HomePage(){
 
     const context = useContext(Context)
     const history = useHistory()
-
+    
     const goToDetails = (id) =>{
         history.push(`/details/${id}`)
     }
     
+    const goToPokedex = () =>{
+        history.push("/pokedex")
+    }
+
     return(
         <Container>
-            <Header/>
+            <Header 
+                navigation={goToPokedex} 
+                title={"Ir para Pokedéx"}
+            />
             <ContainerCards>
                 {context.pokemons.map(pokemon =>{
                         return(
