@@ -9,7 +9,7 @@ export const Header = styled.div`
   margin: 0 auto 30px auto;
 `;
 
-export const BTNVoltar = styled.button`
+export const Button = styled.button`
   border-radius: 10px;
   background: white;
   padding: 10px;
@@ -107,6 +107,7 @@ export const DivPokemon = styled.div`
   justify-content: center;
   background: #e3f8fc;
   border-radius: 5px;
+  box-shadow: 5px 10px 18px #888888;
 `;
 
 export const ImgPokemon = styled.img`
