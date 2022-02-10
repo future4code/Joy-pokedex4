@@ -8,10 +8,10 @@ export default function Card(props){
                 <p>{props.name.toUpperCase()}</p>
             </ContainerInfoCard>
             <ContainerButtons>
-                <button onClick={props.add}>
+                <BtnMain onClick={props.add}>
                     {props.handler ? "Remover" : "Adicionar"}
-                </button>               
-                <button onClick={props.details}>Detalhes</button>
+                </BtnMain>               
+                <BtnMain onClick={props.details}>Detalhes</BtnMain>
 
             </ContainerButtons>
             
