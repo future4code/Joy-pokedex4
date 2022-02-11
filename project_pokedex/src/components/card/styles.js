@@ -39,6 +39,7 @@ export const BtnMain = styled.button`
     border-radius: 8px;
     background-color: #ff3030;
     transition: all 0.2s;
+    cursor: pointer;
     
     :hover{
         background-color: #252525;

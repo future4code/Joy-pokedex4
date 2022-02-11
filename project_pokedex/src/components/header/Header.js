@@ -1,10 +1,10 @@
-import {Container} from "./styles";
+import {Container, BtnHeader} from "./styles";
 
 export default function Header(props){
     return(
         <Container>
             <h1>Pokédex</h1>
-            <button onClick={props.navigation}>{props.title}</button>
+            <BtnHeader onClick={props.navigation}>{props.title}</BtnHeader>
         </Container>
     )
 }

@@ -4,6 +4,9 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;    
     background-image: radial-gradient(#77A1D3, #79CBCA, #E684AE );
+    height: 100vh;
+    width: 100vw;
+    overflow: auto
 `
 export const ContainerCards = styled.div`
     display: grid;
