@@ -7,7 +7,7 @@ export default function GlobalState(props){
 
     let listPokemons = []
     let promises = []
-    for(let id = 1; id<= 20; id++){
+    for(let id = 1; id<= 150; id++){
         promises.push(
             services.request.get(`${id}`)
             .then(({data}) => listPokemons.push(data))
@@ -35,7 +35,7 @@ export default function GlobalState(props){
         setPokemons(newList)
     }
     return(
-        <Context.Provider value={{pokemons, addOrRemovePokemon}}>
+        <Context.Provider value={{pokemons, addOrRemovePokemon, setPokemons}}>
             {props.children}
         </Context.Provider>
     )
