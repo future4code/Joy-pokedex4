@@ -24,3 +24,6 @@ export const ContainerPagination = styled.div`
     display: flex;
     justify-content: center;
 `
+export const Logo = styled.img`
+    height: 100%;
+`

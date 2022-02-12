@@ -2,12 +2,27 @@ import styled from "styled-components";
 
 export const Header = styled.div`
   width: 80%;
-  height: 10vh;
+  height: 25vh;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto 30px auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+
 `;
+
+export const ContainerLogo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 15vh;
+`
+export const ContainerName = styled.div`
+  display: flex;
+`
 
 export const Button = styled.button`
   border-radius: 10px;
@@ -243,4 +258,8 @@ export const Spinner = styled.div`
 export const ContainerBody = styled.div`
   background-image: radial-gradient(#77a1d3, #79cbca, #e684ae);
   height: 100vh;
+`;
+
+export const Logo = styled.img`
+    height: 100%;
 `;
