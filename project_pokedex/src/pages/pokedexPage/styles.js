@@ -22,3 +22,6 @@ export const ContainerCards = styled.div`
         grid-template-columns: repeat(3, 1fr);
     }
 `
+export const Logo = styled.img`
+    height: 100%;
+`

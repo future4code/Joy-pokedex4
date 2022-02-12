@@ -3,7 +3,8 @@ import {useContext} from "react";
 import { Context } from "../../global/context";
 import Header from "../../components/header/Header"
 import Card from "../../components/card/Card";
-import {Container, ContainerCards} from "./styles";
+import {Container, ContainerCards, Logo} from "./styles";
+import logo from "../../assets/logoPokedex.png";
 
 export default function PokedexPage(){
 
@@ -29,6 +30,7 @@ export default function PokedexPage(){
     return(
         <Container>
             <Header
+                logo={<Logo alt={"logotipo"} src={logo}/>}
                 navigation={goToHome}
                 title={"Lista de Pokemons"}
             />  

@@ -20,6 +20,9 @@ import {
   ContainerBody,
   NomePokemon,
   BTNRemove,
+  Logo,
+  ContainerLogo,
+  ContainerName
 } from "./styles";
 import { useContext, useEffect, useState } from "react";
 import { BeatLoader } from "react-spinners";
@@ -28,6 +31,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from "react-router-dom";
 import { Context } from "./../../global/context";
+import logo from "../../assets/LogoDetails.png";
 
 export default function DetailsPage() {
   const [loading, setLoading] = useState(true);
@@ -80,21 +84,26 @@ export default function DetailsPage() {
               return (
                 <ContainerBody key={pokemon.id}>
                   <Header>
-                    <Button onClick={() => history.push("/")}>Voltar</Button>
-                    <NomePokemon>{pokemon.name}</NomePokemon>
-                    {pokemon.added ? (
-                      <BTNRemove
-                        onClick={() => addRemPokemon(pokemon.added, pokemon.id)}
-                      >
-                        Remover
-                      </BTNRemove>
-                    ) : (
-                      <BTNAdiciona
-                        onClick={() => addRemPokemon(pokemon.added, pokemon.id)}
-                      >
-                        Adicionar
-                      </BTNAdiciona>
-                    )}
+                    <ContainerLogo>
+                      <Button onClick={() => history.push("/")}>Voltar</Button>
+                      <Logo alt={"logotipo"} src={logo}/>
+                      {pokemon.added ? (
+                        <BTNRemove
+                          onClick={() => addRemPokemon(pokemon.added, pokemon.id)}
+                        >
+                          Remover
+                        </BTNRemove>
+                      ) : (
+                        <BTNAdiciona
+                          onClick={() => addRemPokemon(pokemon.added, pokemon.id)}
+                        >
+                          Adicionar
+                        </BTNAdiciona>
+                      )}
+                    </ContainerLogo>
+                    <ContainerName>
+                      <NomePokemon>{pokemon.name}</NomePokemon>
+                    </ContainerName>
                   </Header>
                   <CardDetalhes>
                     <Col1>

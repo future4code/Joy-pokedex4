@@ -1,11 +1,12 @@
 import {useContext, useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
 import { Context } from "../../global/context";
-import {Container, ContainerCards, ContainerPagination} from "./styles";
+import {Container, ContainerCards, ContainerPagination, Logo} from "./styles";
 import Header from "../../components/header/Header";
 import Card from "../../components/card/Card";
 import ReactPaginate from 'react-paginate';
 import "../../styles/pagination.css";
+import logo from "../../assets/logoList.png";
 
 export default function HomePage(){
     const [currentItems, setCurrentItems] = useState(null);
@@ -60,6 +61,7 @@ export default function HomePage(){
     return(
         <Container>
             <Header
+                logo={<Logo alt={"logotipo"} src={logo}/>}
                 header={"Lista de Pokémons"} 
                 navigation={goToPokedex} 
                 title={"Ir para Pokedéx"}
