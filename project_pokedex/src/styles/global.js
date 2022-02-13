@@ -10,6 +10,7 @@ export default createGlobalStyle`
 
   h1, p, button{
     font-family: roboto;
-    color: rgba(61, 62, 62, 1);
+    /* color: rgba(61, 62, 62, 1); */
+    color: white;
   }
 `
