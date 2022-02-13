@@ -11,8 +11,7 @@ O que funciona:
 - Todo o projeto está funcional
 
 O que não funciona: 
-- Item 3
-- Item 4
+
 
 ![image](https://user-images.githubusercontent.com/60492862/153752123-622360d8-d940-4773-8e59-d30f2f04ee53.png)
 ![image](https://user-images.githubusercontent.com/60492862/153752130-b587c50d-a217-4434-b183-8d20085a15b0.png)
