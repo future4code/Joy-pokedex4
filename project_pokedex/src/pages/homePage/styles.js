@@ -8,9 +8,9 @@ export const Container = styled.div`
 `
 export const ContainerCards = styled.div`
     display: grid;
-    gap: 1rem;
+    gap: .5rem;
     justify-items: center;
-    position: relative;
+    /* position: relative; */
     
 
     @media(min-width: 1024px){

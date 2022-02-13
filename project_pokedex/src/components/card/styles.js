@@ -4,12 +4,22 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 230px;
+    height: 280px;
+    margin: 1rem 0 1rem 0 ;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+`
+export const ContainerContents = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 200px;
     height: 200px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 25px;
     margin: 1rem 0 1rem 0 ;
-    background-color: #FFFFFF;  
     transition: 300ms ease-in-out;
     
     :hover{   
@@ -18,11 +28,10 @@ export const Container = styled.div`
         transform: scale(1.1);
     }        
 `
-export const ContainerButtons = styled.div`
-    display: flex;
+export const ContainerButton = styled.div`
+    /* display: flex;
     align-self: center;
-    gap: .5rem;
-    margin: 1.5rem;
+    gap: .5rem; */
 `
 export const ContainerInfoCard = styled.div`
     display: flex;
@@ -45,3 +54,19 @@ export const BtnMain = styled.button`
         background-color: #252525;
     }
 `
+export const BtnAddOrRemove = styled.button`
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 8px;
+    background-color: ${props => props.handler ? props.colorRemove : props.colorAdd};
+    transition: all 0.2s;
+    cursor: pointer;
+    
+    :hover{
+        background-color: #252525;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+`
+//#2cbc63
