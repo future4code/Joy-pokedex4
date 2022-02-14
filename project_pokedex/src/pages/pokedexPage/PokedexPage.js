@@ -36,7 +36,7 @@ export default function PokedexPage(){
                                 <Card
                                     key={pokemon.name}
                                     alt={pokemon.name}
-                                    img={pokemon.sprites.front_default}
+                                    img={pokemon.sprites.other.dream_world.front_default}
                                     name={pokemon.name}
                                     handler={pokemon.added}
                                     add={() => context.addOrRemovePokemon(pokemon.id)}
