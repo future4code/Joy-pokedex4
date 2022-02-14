@@ -123,7 +123,7 @@ export default function HomePage() {
                                     <Card
                                         key={pokemon.name}
                                         alt={pokemon.name}
-                                        img={pokemon.sprites.front_default}
+                                        img={pokemon.sprites.other.dream_world.front_default}
                                         name={pokemon.name}
                                         handler={pokemon.added}
                                         add={() => updateCurrentItem(pokemon.id, pokemon)}
