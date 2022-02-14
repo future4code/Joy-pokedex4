@@ -28,11 +28,6 @@ export const ContainerContents = styled.div`
         transform: scale(1.1);
     }        
 `
-export const ContainerButton = styled.div`
-    /* display: flex;
-    align-self: center;
-    gap: .5rem; */
-`
 export const ContainerInfoCard = styled.div`
     display: flex;
     flex-direction: column;

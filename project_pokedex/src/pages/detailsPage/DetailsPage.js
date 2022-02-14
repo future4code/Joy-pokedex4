@@ -68,6 +68,7 @@ export default function DetailsPage() {
     context.addOrRemovePokemon(id);
     acionaToastify(added);
   };
+  
   return (
     <ContainerBody>
       {loading ? (
@@ -85,8 +86,8 @@ export default function DetailsPage() {
                 <ContainerBody key={pokemon.id}>
                   <Header>
                     <ContainerLogo>
-                      <Button onClick={() => history.push("/")}>Voltar</Button>
-                      <Logo alt={"logotipo"} src={logo}/>
+                      <Button onClick={() => history.goBack()}>Voltar</Button>
+                      <Logo alt={"logotipo"} src={logo} onClick={()=>history.push("/")}/>
                       {pokemon.added ? (
                         <BTNRemove
                           onClick={() => addRemPokemon(pokemon.added, pokemon.id)}
@@ -101,10 +102,10 @@ export default function DetailsPage() {
                         </BTNAdiciona>
                       )}
                     </ContainerLogo>
+                  </Header>
                     <ContainerName>
                       <NomePokemon>{pokemon.name}</NomePokemon>
                     </ContainerName>
-                  </Header>
                   <CardDetalhes>
                     <Col1>
                       <DivPokemon>

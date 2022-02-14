@@ -6,7 +6,7 @@ export const Container = styled.div`
     background-image: radial-gradient(#77A1D3, #79CBCA, #E684AE );
     height: 100vh;
     width: 100vw;
-    overflow: auto
+    overflow: auto;
 `
 export const ContainerCards = styled.div`
     display: grid;
@@ -24,4 +24,5 @@ export const ContainerCards = styled.div`
 `
 export const Logo = styled.img`
     height: 100%;
+    cursor: pointer;
 `
