@@ -5,7 +5,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 230px;
-    height: 280px;
+    height: 300px;
     margin: 1rem 0 1rem 0 ;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -16,7 +16,7 @@ export const ContainerContents = styled.div`
     flex-direction: column;
     align-items: center;
     width: 200px;
-    height: 200px;
+    height: 220px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 25px;
     margin: 1rem 0 1rem 0 ;
@@ -30,8 +30,10 @@ export const ContainerContents = styled.div`
 `
 export const ContainerInfoCard = styled.div`
     display: flex;
+    height: 100%;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
     gap: 1rem;
 `
 
@@ -64,4 +66,20 @@ export const BtnAddOrRemove = styled.button`
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 `
-//#2cbc63
+export const Img = styled.img`
+    width: 100%;
+    height: 100%;
+`
+export const ContainerImg = styled.div`
+    display: flex;
+    height: 50%;
+    justify-items: center;
+`
+export const ContainerName = styled.div`
+    display: flex;
+    height: 15%;
+`
+export const ContainerButton = styled.div`
+    display: flex;
+    height: 20%;
+`

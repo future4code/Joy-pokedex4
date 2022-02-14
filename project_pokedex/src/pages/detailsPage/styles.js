@@ -265,3 +265,7 @@ export const Logo = styled.img`
     height: 100%;
     cursor: pointer;
 `;
+
+export const Img = styled.img`
+    width: 50%;
+`;

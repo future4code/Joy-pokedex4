@@ -1,15 +1,30 @@
-import {Container, ContainerContents, ContainerInfoCard, BtnMain, BtnAddOrRemove} from "./styles";
+import {
+    Container, 
+    ContainerContents, 
+    ContainerInfoCard, 
+    BtnMain, 
+    BtnAddOrRemove, 
+    ContainerName,
+    ContainerButton,
+    ContainerImg, 
+    Img
+} from "./styles";
 
 export default function Card(props){
     return(
         <Container>
             <ContainerContents>
                 <ContainerInfoCard>
-                    <img alt={props.alt} src={props.img}/>
-                    <p>{props.name.toUpperCase()}</p>
-                    <BtnMain onClick={props.details}>Detalhes</BtnMain>                
-                </ContainerInfoCard>
-                
+                    <ContainerImg>
+                        <Img alt={props.alt} src={props.img}/>
+                    </ContainerImg>
+                    <ContainerName>
+                        <p>{props.name.toUpperCase()}</p>
+                    </ContainerName>
+                    <ContainerButton>
+                        <BtnMain onClick={props.details}>Detalhes</BtnMain>           
+                    </ContainerButton>
+                </ContainerInfoCard>                
             </ContainerContents>
                 <BtnAddOrRemove 
                     onClick={props.add} 

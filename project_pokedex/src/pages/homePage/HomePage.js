@@ -27,7 +27,7 @@ export default function HomePage() {
     const history = useHistory()
     const loading = context.pokemons
     const itemsPerPage = Math.ceil(context.pokemons.length / 7.5)
-
+    console.log(context.pokemons)
     useEffect(() => {
         const endOffSet = itemOffSet + itemsPerPage;
         setCurrentItems(context.pokemons?.slice(itemOffSet, endOffSet));
@@ -106,7 +106,7 @@ export default function HomePage() {
                                     <Card
                                         key={pokemon.name}
                                         alt={pokemon.name}
-                                        img={pokemon.sprites.front_default}
+                                        img={pokemon.sprites.other.dream_world.front_default}
                                         name={pokemon.name}
                                         handler={pokemon.added}
                                         add={() => updateCurrentItem(pokemon.id, pokemon)}
