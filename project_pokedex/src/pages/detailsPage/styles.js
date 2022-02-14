@@ -2,15 +2,13 @@ import styled from "styled-components";
 
 export const Header = styled.div`
   width: 80%;
-  height: 25vh;
+  height: 15vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto 30px auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-
 `;
 
 export const ContainerLogo = styled.div`
@@ -22,6 +20,8 @@ export const ContainerLogo = styled.div`
 `
 export const ContainerName = styled.div`
   display: flex;
+  justify-content: center;
+  width: 100%;
 `
 
 export const Button = styled.button`
@@ -50,6 +50,7 @@ export const BTNAdiciona = styled.button`
   background: #28a745;
   border: none;
   transition: all 0.5s;
+  
   :hover {
     transition: all 0.5s;
     color: black;
@@ -137,7 +138,7 @@ export const Col2 = styled.div`
   width: 53%;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   background: white;
   box-shadow: 5px 10px 18px #888888;
@@ -160,7 +161,7 @@ export const Col2 = styled.div`
 export const InfoPokemon = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 8px;
 `;
 
 export const ColAtributos = styled.div`
@@ -262,4 +263,5 @@ export const ContainerBody = styled.div`
 
 export const Logo = styled.img`
     height: 100%;
+    cursor: pointer;
 `;

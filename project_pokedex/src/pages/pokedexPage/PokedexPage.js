@@ -14,11 +14,7 @@ export default function PokedexPage(){
     const pokemonsFilter = context.pokemons.filter((pokemon) => {
         return pokemon.added === true
     })
-
-    // const newPokemon = pokemonsFilter.map((pokemon) => {
-    //     console.log(pokemon.name)
-    // })
-
+    
     const goToHome = () => {
         history.push("/")
     }
@@ -30,7 +26,7 @@ export default function PokedexPage(){
     return(
         <Container>
             <Header
-                logo={<Logo alt={"logotipo"} src={logo}/>}
+                logo={<Logo alt={"logotipo"} src={logo} onClick={goToHome}/>}
                 navigation={goToHome}
                 title={"Lista de Pokemons"}
             />  
