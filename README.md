@@ -1,16 +1,51 @@
-# POKEDEX
 
-Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+<h1 align="center"> <a href='http://future-clover.surge.sh/'>
+  Pokédex 
+  <img class="emojidex-emoji" src="https://cdn.emojidex.com/emoji/seal/pikachu.png" width="40" height="40" emoji-code="Pokebola" alt="Pokebola" />
+  </a></h1>
+<div align="center"> 
+  
+  ### Criação de Pokédex
+  
+</div>
+<div align="center">
+  <img src="https://media.giphy.com/media/Y4kZokSLJov84J421T/giphy.gif" width="300" height="400" />
+</div>
 
-Link do Surge: www.link.com.br
+### :iphone: Funcionalidades
 
-O que funciona:
-- Item 1
-- Item 2
+- [x] Ver uma lista de Pokémons.
+- [x] Adicionar Pokémons a Pokédex.
+- [x] Ver detalhes dos Pokémons.
+- [x] Remover Pokémon da Pokédex.
 
-O que não funciona: 
-- Item 3
-- Item 4
+### :wrench: Tecnologias
+<p>Ferramentas utilizadas:</p>
+
+- [React](https://pt-br.reactjs.org/)
+- [Javascript](https://www.javascript.com/)
+- [Styled-components](https://styled-components.com/)
+- [Axios](https://axios-http.com/docs/intro)
+
+### :white_check_mark: O que funciona
+- [x] Requisitos básicos.
+- [x] Desafios 1 e 3.
+
+### :x: O que não funciona
+- [ ] Desafio 2.
+
+### Demonstração (Link Surge) 
+[Site Pokédex](http://future-clover.surge.sh/)
+
+### Layout (Imagens)
+![image](https://user-images.githubusercontent.com/89327618/153894264-22876766-1985-4a24-8f35-05057707b578.png)
+![image](https://user-images.githubusercontent.com/89327618/153894354-968d64c1-6746-4681-b08d-30dbc5a82db0.png)
+![image](https://user-images.githubusercontent.com/89327618/153794860-e8e0b727-2dd8-4961-8ac8-f489f332fba8.png)
+
+<h3 align="center"> 
+  Colaboradores: 
+Geórgine Danilo de Sousa Matos
+- Leonardo Silva dos Santos
+- Luciano Ribeiro dos Santos
+
+</h3>
